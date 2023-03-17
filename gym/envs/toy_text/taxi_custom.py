@@ -260,7 +260,7 @@ class CustomTaxiEnv(Env):
                             if 0 <= action <= 3:
                                 # If we try to move, there is a probability that we remain in the current state
                                 self.P[state][action].append(
-                                    (1-no_transition_prob, new_state, reward, terminated)
+                                    (1-no_transition_prob, new_state, reward, done)
                                 )
                                 self.P[state][action].append(
                                     (no_transition_prob, state, get_reward(taxi_loc), False)
