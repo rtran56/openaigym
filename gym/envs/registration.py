@@ -339,7 +339,8 @@ def make(id: Literal["FrozenLake-v1", "FrozenLake8x8-v1"], **kwargs) -> Env[np.n
 def make(id: Literal["CliffWalking-v0"], **kwargs) -> Env[np.ndarray, Union[np.ndarray, int]]: ...
 @overload
 def make(id: Literal["Taxi-v3"], **kwargs) -> Env[np.ndarray, Union[np.ndarray, int]]: ...
-
+@overload
+def make(id: Literal["Custom-Taxi"], **kwargs) -> Env[np.ndarray, Union[np.ndarray, int]]: ...
 # Mujoco
 # ----------------------------------------
 
