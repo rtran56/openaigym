@@ -146,7 +146,7 @@ class CustomTaxiEnv(Env):
 
     metadata = {"render_modes": ["human", "ansi", "rgb_array"], "render_fps": 4}
 
-    def __init__(self):
+    def __init__(self, map=MAP, locs=[(0, 0), (0, 4), (4, 0), (4, 3)], starting_state=None, risky_tiles=[], hazard_tiles=[], happy_tiles =[], render_mode: Optional[str] = None):
         self.desc = np.asarray(MAP, dtype="c")
 
         self.locs = locs = [(0, 0), (0, 4), (4, 0), (4, 3)]
@@ -275,7 +275,7 @@ class CustomTaxiEnv(Env):
         self.action_space = spaces.Discrete(num_actions)
         self.observation_space = spaces.Discrete(num_states)
 
-        
+
         # pygame utils
         self.window = None
         self.clock = None
